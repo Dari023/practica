@@ -1,6 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Restaurantlista } from "./componentes/RestaurantList";
+import { RestaurantDall } from "./componentes/RestaurantDetail";
+import { AgrearRes } from "./componentes/RestaurantCreate";
 export const App = () => {
   return (
     <Router>
@@ -23,14 +25,10 @@ export const App = () => {
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="#" elemen>
-                  Home
-                </a>
+              <Link className="nav-link" to="/">Home</Link>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Create Restaurant
-                </a>
+                <Link className="nav-link" to="/create">Create Restaurant</Link>
               </li>
             </ul>
           </div>
@@ -38,7 +36,7 @@ export const App = () => {
       </nav>
       <Routes>
         <Route path="/" element={<Restaurantlista />} />
-      
+        <Route path="/create" element={<AgrearRes />} />
       </Routes> 
     </Router>
   );
